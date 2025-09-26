@@ -22,7 +22,9 @@ import {
 } from '@/constants';
 
 function getContactIcon(iconName: string) {
-	const iconMap: { [key: string]: any } = {
+	const iconMap: {
+		[key: string]: React.ComponentType<{ className?: string }>;
+	} = {
 		Mail: Mail,
 		Phone: Phone,
 		MapPin: MapPin,
@@ -31,7 +33,9 @@ function getContactIcon(iconName: string) {
 }
 
 function getSocialIcon(iconName: string) {
-	const iconMap: { [key: string]: any } = {
+	const iconMap: {
+		[key: string]: React.ComponentType<{ className?: string }>;
+	} = {
 		Github: Github,
 		Linkedin: Linkedin,
 		Code2: Code2,

@@ -5,9 +5,9 @@ import { ExperienceSection } from '@/components/about/experience';
 import { TechSection } from '@/components/about/tech';
 
 export const metadata: Metadata = {
-	title: 'About - Humam Kharbouch',
+	title: 'About - Humam',
 	description:
-		'Learn more about Humam Kharbouch, a passionate Full Stack Developer from Morocco. Discover my journey, experience, and technical expertise.',
+		'Learn more about Humam, a passionate Full Stack Developer from Morocco. Discover my journey, experience, and technical expertise.',
 	keywords: [
 		'About',
 		'Full Stack Developer',
@@ -17,7 +17,15 @@ export const metadata: Metadata = {
 		'Web Development',
 		'AI',
 		'UI/UX',
+		'Background',
+		'Skills',
 	],
+	openGraph: {
+		title: 'About - Humam',
+		description:
+			'Learn more about Humam, a passionate Full Stack Developer from Morocco.',
+		type: 'website',
+	},
 };
 
 export default function AboutPage() {

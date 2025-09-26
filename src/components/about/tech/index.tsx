@@ -34,7 +34,7 @@ import {
 } from 'simple-icons/icons';
 
 function getTechIcon(techName: string) {
-	const iconMap: { [key: string]: any } = {
+	const iconMap: { [key: string]: { hex: string; path: string } | null } = {
 		React: siReact,
 		'Next.js': siNextdotjs,
 		TypeScript: siTypescript,
@@ -164,11 +164,12 @@ export function TechSection() {
 								Always Learning
 							</h3>
 							<p className="text-muted-foreground mb-6">
-								Technology evolves rapidly, and I'm committed to
-								staying current with the latest trends and best
-								practices. I'm always exploring new frameworks,
-								tools, and methodologies to enhance my
-								development capabilities.
+								Technology evolves rapidly, and I&apos;m
+								committed to staying current with the latest
+								trends and best practices. I&apos;m always
+								exploring new frameworks, tools, and
+								methodologies to enhance my development
+								capabilities.
 							</p>
 							<div className="flex flex-wrap justify-center gap-2">
 								<Badge variant="outline" className="rounded-xs">

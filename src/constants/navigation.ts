@@ -78,4 +78,5 @@ export const socialPlatforms: SocialPlatform[] = [
 	},
 ];
 
-export default { navLinks, contactMethods, socialPlatforms };
+const navigationConstants = { navLinks, contactMethods, socialPlatforms };
+export default navigationConstants;

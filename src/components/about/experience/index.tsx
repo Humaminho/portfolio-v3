@@ -16,7 +16,9 @@ import { Badge } from '@/components/ui/badge';
 import { experienceContent, experiences, spacing } from '@/constants';
 
 function getExperienceIcon(iconName: string) {
-	const iconMap: { [key: string]: any } = {
+	const iconMap: {
+		[key: string]: React.ComponentType<{ className?: string }>;
+	} = {
 		Building2: Building2,
 		Users: Users,
 		Code2: Code2,

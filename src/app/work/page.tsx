@@ -8,9 +8,27 @@ import { Badge } from '@/components/ui/badge';
 import { projects } from '@/constants/projects';
 
 export const metadata: Metadata = {
-	title: 'Work - Humam Kharbouch',
+	title: 'Work - Humam',
 	description:
-		'Explore the projects and work of Humam Kharbouch, a Full Stack Developer specializing in modern web applications.',
+		'Explore the projects and work of Humam, a Full Stack Developer specializing in modern web applications.',
+	keywords: [
+		'Work',
+		'Projects',
+		'Portfolio',
+		'Full Stack Developer',
+		'Web Applications',
+		'E-commerce',
+		'FinTech',
+		'Booking Systems',
+		'React',
+		'Next.js',
+	],
+	openGraph: {
+		title: 'Work - Humam',
+		description:
+			'Explore the projects and work of Humam, a Full Stack Developer specializing in modern web applications.',
+		type: 'website',
+	},
 };
 
 export default function WorkPage() {
@@ -20,7 +38,7 @@ export default function WorkPage() {
 				{/* Header */}
 				<div className="text-center mb-16">
 					<h1 className="text-4xl font-bold mb-6">My Work</h1>
-					<p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+					<p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
 						Showcasing a diverse range of projects, from e-commerce
 						platforms to booking systems and FinTech solutions,
 						demonstrating expertise in various domains and
@@ -41,7 +59,7 @@ export default function WorkPage() {
 									index % 2 === 1 ? 'lg:order-2' : ''
 								}`}
 							>
-								<Card className="overflow-hidden rounded-sm relative group">
+								<Card className="overflow-hidden rounded-sm relative group p-0">
 									{/* Scrollable */}
 									<div className="relative h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/30 scrollbar-track-transparent hover:scrollbar-thumb-primary/50 transition-all duration-300">
 										<Image
@@ -175,9 +193,10 @@ export default function WorkPage() {
 							Interested in Working Together?
 						</h2>
 						<p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-							I'm always open to discussing new opportunities,
-							interesting projects, and collaborations. Let's
-							build something amazing together!
+							I&apos;m always open to discussing new
+							opportunities, interesting projects, and
+							collaborations. Let&apos;s build something amazing
+							together!
 						</p>
 						<div className="flex flex-col sm:flex-row gap-4 justify-center">
 							<Button asChild size="lg" className="rounded-xs">

@@ -12,7 +12,6 @@ export async function POST(request: NextRequest) {
 	try {
 		const body: ContactFormData = await request.json();
 
-		// Server-side validation
 		const { firstName, lastName, email, subject, message } = body;
 
 		if (!firstName || !lastName || !email || !subject || !message) {
@@ -22,7 +21,6 @@ export async function POST(request: NextRequest) {
 			);
 		}
 
-		// Email validation
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		if (!emailRegex.test(email)) {
 			return NextResponse.json(
@@ -31,10 +29,8 @@ export async function POST(request: NextRequest) {
 			);
 		}
 
-		// Dynamic import to avoid build issues
 		const { google } = await import('googleapis');
 
-		// Initialize Google Sheets API using the service account JSON file
 		const auth = new google.auth.GoogleAuth({
 			keyFile: './credentials/form-submission-service-account.json',
 			scopes: ['https://www.googleapis.com/auth/spreadsheets'],
@@ -47,16 +43,14 @@ export async function POST(request: NextRequest) {
 			throw new Error('SPREADSHEET_ID environment variable is not set');
 		}
 
-		// Prepare data for Google Sheets
 		const timestamp = new Date().toISOString();
 		const values = [
 			[timestamp, firstName, lastName, email, subject, message],
 		];
 
-		// Append data to the spreadsheet
 		await sheets.spreadsheets.values.append({
 			spreadsheetId,
-			range: 'Sheet1!A:F', // Adjust range as needed
+			range: 'Sheet1!A:F',
 			valueInputOption: 'RAW',
 			requestBody: {
 				values,

@@ -11,6 +11,7 @@ import {
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { CvDownload } from '@/components/common/cv-download';
 import { aboutContent, techStack, spacing } from '@/constants';
 
 import {
@@ -26,7 +27,6 @@ import {
 	siFigma,
 	siNodedotjs,
 	siExpress,
-	siPython,
 	siDjango,
 	siFastapi,
 	siPostgresql,
@@ -44,7 +44,7 @@ import {
 } from 'simple-icons/icons';
 
 function getTechIcon(techName: string) {
-	const iconMap: { [key: string]: any } = {
+	const iconMap: { [key: string]: { hex: string; path: string } | null } = {
 		React: siReact,
 		'Next.js': siNextdotjs,
 		TypeScript: siTypescript,
@@ -58,7 +58,6 @@ function getTechIcon(techName: string) {
 		'Node.js': siNodedotjs,
 		'Express.js': siExpress,
 		Express: siExpress,
-		// Python: siPython,
 		Django: siDjango,
 		FastAPI: siFastapi,
 		PostgreSQL: siPostgresql,
@@ -131,16 +130,11 @@ export function OverviewSection() {
 									<ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
 								</Link>
 							</Button>
-							<Button
-								variant="outline"
-								asChild
-								className="rounded-xs px-8 py-3 group"
-							>
-								<Link href="/work">
-									See my work
-									<ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-								</Link>
-							</Button>
+							<CvDownload
+								variant="button"
+								size="lg"
+								className="px-8 py-3"
+							/>
 						</div>
 					</div>
 

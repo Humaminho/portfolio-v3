@@ -3,16 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-import {
-	Moon,
-	Sun,
-	Sparkles,
-	Menu,
-	X,
-	Github,
-	Linkedin,
-	Code2,
-} from 'lucide-react';
+import { Moon, Sun, Menu, X, Github, Linkedin, Code2 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/ui/logo';
@@ -20,7 +11,9 @@ import { navLinks, socialPlatforms } from '@/constants';
 import { cn } from '@/lib/utils';
 
 function getSocialIcon(iconName: string) {
-	const iconMap: { [key: string]: any } = {
+	const iconMap: {
+		[key: string]: React.ComponentType<{ className?: string }>;
+	} = {
 		Github: Github,
 		Linkedin: Linkedin,
 		Code2: Code2,

@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: 'Humam Kharbouch - Full Stack Developer',
+	title: 'Humam - Full Stack Developer',
 	description:
-		'Portfolio of Humam Kharbouch, a passionate Full Stack Developer from Morocco specializing in modern web technologies, AI, and UI/UX design.',
+		'Portfolio of Humam, a passionate Full Stack Developer from Morocco specializing in modern web technologies, AI, and UI/UX design.',
 	keywords: [
 		'Full Stack Developer',
 		'React',
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
 		'Morocco',
 		'Web Development',
 	],
-	authors: [{ name: 'Humam Kharbouch' }],
-	creator: 'Humam Kharbouch',
+	authors: [{ name: 'Humam' }],
+	creator: 'Humam',
 	openGraph: {
-		title: 'Humam Kharbouch - Full Stack Developer',
+		title: 'Humam - Full Stack Developer',
 		description:
-			'Portfolio of Humam Kharbouch, a passionate Full Stack Developer from Morocco',
+			'Portfolio of Humam, a passionate Full Stack Developer from Morocco',
 		url: 'https://humam.pro',
-		siteName: 'Humam Kharbouch Portfolio',
+		siteName: 'Humam Portfolio',
 		locale: 'en_US',
 		type: 'website',
 	},

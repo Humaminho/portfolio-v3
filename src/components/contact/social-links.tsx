@@ -27,9 +27,9 @@ export function SocialLinks() {
 								href={link.url}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex items-center gap-3 p-3 rounded-sm border border-border hover:bg-muted/50 transition-colors group"
+								className="flex items-center gap-4 p-3 rounded-sm border border-border hover:bg-muted/50 transition-colors group"
 							>
-								<IconComponent className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
+								<IconComponent className="h-5 w-5 text-primary" />
 								<div>
 									<p className="font-medium capitalize">
 										{link.platform}

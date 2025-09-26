@@ -28,4 +28,5 @@ export const contactInfo = {
 	location: 'Morocco',
 };
 
-export default { socialLinks, contactInfo };
+const socialConstants = { socialLinks, contactInfo };
+export default socialConstants;

@@ -8,7 +8,9 @@ import { Logo } from '@/components/ui/logo';
 import { contactInfo, navLinks, socialPlatforms } from '@/constants';
 
 function getContactIcon(iconName: string) {
-	const iconMap: { [key: string]: any } = {
+	const iconMap: {
+		[key: string]: React.ComponentType<{ className?: string }>;
+	} = {
 		Mail: Mail,
 		Phone: Phone,
 	};
@@ -16,7 +18,9 @@ function getContactIcon(iconName: string) {
 }
 
 function getSocialIcon(iconName: string) {
-	const iconMap: { [key: string]: any } = {
+	const iconMap: {
+		[key: string]: React.ComponentType<{ className?: string }>;
+	} = {
 		Github: Github,
 		Linkedin: Linkedin,
 		Code2: Code2,
@@ -50,7 +54,7 @@ export function Footer() {
 					{/* Brand Section */}
 					<div className="md:col-span-1">
 						<Link href="/" className="flex items-center gap-3 mb-4">
-							<Logo size="md" />
+							<Logo size="sm" />
 							<span className="font-semibold text-lg">Humam</span>
 						</Link>
 						<p className="text-sm text-muted-foreground leading-relaxed">

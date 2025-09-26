@@ -98,34 +98,6 @@ export const experiences: Experience[] = [
 		],
 		icon: 'Users',
 	},
-	// {
-	// 	id: 'company-x',
-	// 	title: 'Full Stack Developer Intern',
-	// 	company: 'Company X',
-	// 	period: 'May 2023 - Nov 2023',
-	// 	type: 'Internship',
-	// 	location: 'Morocco',
-	// 	current: false,
-	// 	description:
-	// 		'Developed and maintained small to medium web applications with a focus on performance and scalability.',
-	// 	responsibilities: [
-	// 		'Developed and maintained small to medium web applications with a focus on performance and scalability',
-	// 		'Built reusable frontend components and implemented responsive layouts',
-	// 		'Delivered tailored solutions aligned with client business requirements',
-	// 		'Improved SEO and optimized rendering performance for faster load times',
-	// 	],
-	// 	technologies: [
-	// 		'React',
-	// 		'Next.js',
-	// 		'Tailwind CSS',
-	// 		'Node.js',
-	// 		'Express',
-	// 		'MongoDB',
-	// 		'Git',
-	// 		'Figma',
-	// 	],
-	// 	icon: 'Building2',
-	// },
 ];
 
 export default experiences;

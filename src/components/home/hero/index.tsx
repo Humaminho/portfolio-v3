@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Download, MapPin } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { CvDownload } from '@/components/common/cv-download';
 import { heroContent, heroTechStack } from '@/constants';
 
 export function HeroSection() {
@@ -28,7 +29,7 @@ export function HeroSection() {
 				{/* Heading */}
 				<div className="space-y-4 animate-in fade-in-0 slide-in-from-top-2 duration-700 ease-out">
 					<h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-						Hey, I'm{' '}
+						Hey, I&apos;m{' '}
 						<span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
 							{heroContent.name}
 						</span>
@@ -68,16 +69,11 @@ export function HeroSection() {
 							<ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
 						</Link>
 					</Button>
-					<Button
-						asChild
-						variant="outline"
-						className="rounded-xs px-8 py-3 group"
-					>
-						<Link href={heroContent.cta.secondary.href}>
-							{heroContent.cta.secondary.text}
-							<Download className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
-						</Link>
-					</Button>
+					<CvDownload
+						variant="button"
+						size="lg"
+						className="px-8 py-3"
+					/>
 				</div>
 
 				{/* Scroll Indicator */}
