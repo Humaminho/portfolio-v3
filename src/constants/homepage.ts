@@ -4,7 +4,7 @@ export const heroContent = {
 	title: 'Full Stack Developer',
 	location: 'Morocco',
 	description:
-		'Passionate about crafting robust and scalable web applications. Specializing in modern web technologies, business intelligence platforms, and e-commerce solutions.',
+		`Full Stack Developer focused on scalable, user-centric web apps—combining modern tech with creative problem-solving.`,
 	cta: {
 		primary: {
 			text: 'Get in touch',
@@ -19,12 +19,11 @@ export const heroContent = {
 
 export const aboutContent = {
 	title: 'About Me',
-	description: `I'm Humam Kharbouch, a passionate Full Stack Developer from Morocco. Currently working as a Software Engineer at Cadipi, I specialize in architecting and developing international business intelligence SaaS platforms. With 3+ years of experience, I focus on building scalable, secure, and user-centric web applications using modern technologies.`,
+	description: `I'm Humam Kharbouch, a passionate Full Stack Developer from Morocco. As a freelancer, I work on a variety of projects, always focused on bringing value through technology. I'm constantly learning and improving, with 3+ years of experience building scalable, secure, and user-centric web applications using modern technologies.`,
 	stats: [
 		{ icon: 'Award', value: '3+', label: 'Years Experience' },
 		{ icon: 'Sparkles', value: '15+', label: 'Technologies' },
 		{ icon: 'Code', value: '10+', label: 'Projects Delivered' },
-		{ icon: 'GraduationCap', value: 'Continuous', label: 'Learning' },
 	],
 	currentRole: {
 		title: 'Software Engineer',
@@ -32,10 +31,18 @@ export const aboutContent = {
 		description: [
 			'Architecting international business intelligence SaaS platform.',
 			'Designed and implemented PostgreSQL schemas for enterprise-level analytics.',
-			'Built modular and scalable backend services with NestJS.',
+			'Built modular and scalable backend services with Express.',
 			'Integrated Firebase for authentication and system access control.',
 		],
-		technologies: ['NestJS', 'PostgreSQL', 'Firebase', 'Docker', 'Redis'],
+		technologies: [
+			'NextJS',
+			'TailwindCSS',
+			'TypeScript',
+			'Express',
+			'PostgreSQL',
+			'Firebase',
+			'Docker',
+		],
 	},
 	cta: {
 		text: 'Learn more about me',
@@ -51,9 +58,9 @@ export const experienceContent = {
 			'With a solid foundation in full-stack development and a passion for innovative solutions, I am always eager to take on new projects and contribute to impactful teams.',
 		stats: [
 			{ icon: 'Award', value: '3+', label: 'Years Experience' },
-			{ icon: 'Hourglass', value: '4', label: 'Professional Roles' },
+			{ icon: 'Hourglass', value: '3', label: 'Professional Roles' },
 			{ icon: 'Code', value: '15+', label: 'Technologies Mastered' },
-			{ icon: 'CheckCircle', value: '100%', label: 'Project Completion' },
+			{ icon: 'CheckCircle', value: '10+', label: 'Projects Delivered' },
 		],
 	},
 };
@@ -67,8 +74,8 @@ export const projectsContent = {
 		stats: [
 			{ value: '3', label: 'Major Projects' },
 			{ value: '5+', label: 'Client Engagements' },
-			{ value: '15+', label: 'Technologies Used' },
-			{ value: '100%', label: 'Project Completion' },
+			{ value: '15+', label: 'Technologies Mastered' },
+			{ value: '10+', label: 'Projects Delivered' },
 		],
 	},
 	cta: {
@@ -87,7 +94,7 @@ export const contactContent = {
 			href: '/contact',
 		},
 		secondary: {
-			text: "Let's Build Something Amazing Together!",
+			text: "Let's Build Something Cool Together!",
 			description:
 				"Whether you have a project in mind, a question, or just want to say hi, I'd love to hear from you.",
 		},

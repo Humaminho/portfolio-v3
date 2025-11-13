@@ -56,7 +56,7 @@ export function AboutMiniSection() {
 					</div>
 
 					{/* Right Column: Current Role Card */}
-					<div className="animate-in fade-in-0 zoom-in-95 duration-700 ease-out delay-200">
+					<div className="animate-in fade-in-0 zoom-in-95 duration-700 ease-out delay-200 self-start">
 						<div className="bg-card border border-border rounded-sm p-6">
 							<div className="flex items-start justify-between mb-4">
 								<Badge
@@ -77,7 +77,6 @@ export function AboutMiniSection() {
 							</p>
 							<div className="flex flex-wrap gap-2">
 								{aboutContent.currentRole.technologies
-									.slice(0, 4)
 									.map((tech) => (
 										<Badge
 											key={tech}

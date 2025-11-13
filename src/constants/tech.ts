@@ -92,12 +92,15 @@ export const techStack: TechItem[] = [
 ];
 
 export const heroTechStack = [
+	'TypeScript',
 	'React',
 	'Next.js',
-	'TypeScript',
 	'Node.js',
+	'Express',
+	'PostgreSQL',
+	'Firebase',
+	'Docker',
 	'Tailwind CSS',
-	'Python',
 ];
 
 export const techCategories = [

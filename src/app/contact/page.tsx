@@ -41,7 +41,6 @@ export default function ContactPage() {
 					<div className="space-y-8">
 						<ContactInfo />
 						<SocialLinks />
-						<CallToAction />
 					</div>
 				</div>
 			</div>

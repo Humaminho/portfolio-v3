@@ -58,9 +58,8 @@ export function Footer() {
 							<span className="font-semibold text-lg">Humam</span>
 						</Link>
 						<p className="text-sm text-muted-foreground leading-relaxed">
-							Full Stack Developer passionate about creating
-							innovative web solutions and leading technical
-							teams.
+							Dedicated to creating value through technology and
+							committed to continuous learning in every project.
 						</p>
 					</div>
 
@@ -84,15 +83,23 @@ export function Footer() {
 					<div className="md:col-span-1">
 						<h3 className="font-semibold mb-4">Quick Contact</h3>
 						<div className="space-y-3">
-							<p className="text-sm text-muted-foreground">
+							<a
+								href={`mailto:${contactInfo.email}`}
+								className="text-sm text-muted-foreground hover:text-foreground transition-colors block hover:underline underline-offset-2"
+								aria-label="Send email"
+							>
 								{contactInfo.email}
-							</p>
-							<p className="text-sm text-muted-foreground">
+							</a>
+							<a
+								href={`tel:${contactInfo.phone.replace(
+									/\s+/g,
+									''
+								)}`}
+								className="text-sm text-muted-foreground hover:text-foreground transition-colors block hover:underline underline-offset-2"
+								aria-label="Call phone"
+							>
 								{contactInfo.phone}
-							</p>
-							<p className="text-sm text-muted-foreground">
-								{contactInfo.location}
-							</p>
+							</a>
 						</div>
 					</div>
 

@@ -15,11 +15,6 @@ export const socialLinks: SocialLink[] = [
 		url: 'https://www.linkedin.com/in/humam-dev/',
 		label: 'LinkedIn Profile',
 	},
-	{
-		platform: 'leetcode',
-		url: 'https://leetcode.com/u/humaminho/',
-		label: 'LeetCode Profile',
-	},
 ];
 
 export const contactInfo = {

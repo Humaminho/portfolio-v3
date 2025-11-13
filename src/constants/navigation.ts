@@ -68,14 +68,6 @@ export const socialPlatforms: SocialPlatform[] = [
 		description: 'Professional network',
 		color: 'hover:text-blue-600 dark:hover:text-blue-400',
 	},
-	{
-		platform: 'leetcode',
-		url: 'https://leetcode.com/u/humaminho/',
-		label: 'LeetCode Profile',
-		icon: 'Code2',
-		description: 'Coding challenges',
-		color: 'hover:text-orange-600 dark:hover:text-orange-400',
-	},
 ];
 
 const navigationConstants = { navLinks, contactMethods, socialPlatforms };
