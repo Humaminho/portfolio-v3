@@ -12,6 +12,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { CvDownload } from '@/components/common/cv-download';
+import CountUp from '@/components/common/animations/count-up';
 import { aboutContent, techStack, spacing } from '@/constants';
 
 import {
@@ -97,10 +98,10 @@ export function OverviewSection() {
 									stat.icon === 'Award'
 										? Award
 										: stat.icon === 'Sparkles'
-										? Sparkles
-										: stat.icon === 'Code'
-										? Code
-										: GraduationCap;
+											? Sparkles
+											: stat.icon === 'Code'
+												? Code
+												: GraduationCap;
 								return (
 									<div
 										key={index}
@@ -109,7 +110,14 @@ export function OverviewSection() {
 										<IconComponent className="h-6 w-6 text-primary" />
 										<div>
 											<p className="text-xl font-bold">
-												{stat.value}
+												<CountUp
+													to={parseInt(stat.value)}
+													duration={2}
+												/>
+												{stat.value.replace(
+													/[0-9]/g,
+													'',
+												)}
 											</p>
 											<p className="text-sm text-muted-foreground">
 												{stat.label}
@@ -123,17 +131,18 @@ export function OverviewSection() {
 						<div className="flex flex-col sm:flex-row gap-4">
 							<Button
 								asChild
-								className="rounded-xs px-8 py-3 group"
+								size="lg"
+								className="rounded-xs px-8 h-11 group"
 							>
 								<Link href="/contact">
 									Reach out
-									<ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+									<ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
 								</Link>
 							</Button>
 							<CvDownload
 								variant="button"
 								size="lg"
-								className="px-8 py-3"
+								className="px-8 h-11"
 							/>
 						</div>
 					</div>
@@ -155,7 +164,7 @@ export function OverviewSection() {
 							<h3 className="text-2xl font-bold mb-3">
 								{aboutContent.currentRole.title}
 							</h3>
-							<div className="space-y-3 mb-6 flex-1">
+							<div className="space-y-1 mb-6 flex-1">
 								{aboutContent.currentRole.description.map(
 									(item, idx) => (
 										<p
@@ -164,7 +173,7 @@ export function OverviewSection() {
 										>
 											{item}
 										</p>
-									)
+									),
 								)}
 							</div>
 							<div className="flex flex-wrap gap-2 mt-auto">
@@ -177,7 +186,7 @@ export function OverviewSection() {
 										>
 											{tech}
 										</Badge>
-									)
+									),
 								)}
 							</div>
 						</div>
@@ -185,19 +194,19 @@ export function OverviewSection() {
 				</div>
 
 				{/* Tech Stack */}
-				<div className="relative w-full overflow-hidden py-8 bg-muted/30 rounded-sm animate-in fade-in-0 zoom-in-95 duration-700 ease-out delay-300">
-					<div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-					<div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+				<div className="group relative w-full overflow-hidden py-8 bg-muted/30 rounded-sm animate-in fade-in-0 zoom-in-95 duration-700 ease-out delay-300">
+					<div className="absolute inset-y-0 left-0 w-1/4 bg-linear-to-r from-background to-transparent z-10 pointer-events-none" />
+					<div className="absolute inset-y-0 right-0 w-1/4 bg-linear-to-l from-background to-transparent z-10 pointer-events-none" />
 
-					<div className="flex animate-infinite-scroll">
+					<div className="flex animate-marquee group-hover:[animation-play-state:paused]">
 						{/* First set */}
-						<div className="flex gap-6 flex-shrink-0">
+						<div className="flex gap-6 shrink-0">
 							{techStack.map((tech, index) => {
 								const IconComponent = getTechIcon(tech.name);
 								return (
 									<div
 										key={`first-${index}`}
-										className="flex items-center justify-center px-6 py-3 bg-card border border-border rounded-full shadow-sm text-lg font-medium text-foreground flex-shrink-0 min-w-[150px] hover:shadow-md transition-shadow duration-200"
+										className="flex items-center justify-center px-6 py-3 bg-card border border-border rounded-full shadow-sm text-lg font-medium text-foreground shrink-0 min-w-37.5 hover:shadow-md transition-shadow duration-200"
 									>
 										{IconComponent ? (
 											<svg
@@ -205,7 +214,7 @@ export function OverviewSection() {
 												height="24"
 												viewBox="0 0 24 24"
 												fill={`#${IconComponent.hex}`}
-												className="mr-3 flex-shrink-0"
+												className="mr-3 shrink-0"
 											>
 												<path d={IconComponent.path} />
 											</svg>
@@ -220,13 +229,13 @@ export function OverviewSection() {
 							})}
 						</div>
 						{/* Duplicate set */}
-						<div className="flex gap-6 flex-shrink-0">
+						<div className="flex gap-6 shrink-0">
 							{techStack.map((tech, index) => {
 								const IconComponent = getTechIcon(tech.name);
 								return (
 									<div
 										key={`second-${index}`}
-										className="flex items-center justify-center px-6 py-3 bg-card border border-border rounded-full shadow-sm text-lg font-medium text-foreground flex-shrink-0 min-w-[150px] hover:shadow-md transition-shadow duration-200"
+										className="flex items-center justify-center px-6 py-3 bg-card border border-border rounded-full shadow-sm text-lg font-medium text-foreground shrink-0 min-w-37.5 hover:shadow-md transition-shadow duration-200"
 									>
 										{IconComponent ? (
 											<svg
@@ -234,7 +243,7 @@ export function OverviewSection() {
 												height="24"
 												viewBox="0 0 24 24"
 												fill={`#${IconComponent.hex}`}
-												className="mr-3 flex-shrink-0"
+												className="mr-3 shrink-0"
 											>
 												<path d={IconComponent.path} />
 											</svg>

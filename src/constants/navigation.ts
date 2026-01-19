@@ -31,21 +31,21 @@ export const contactMethods: ContactMethod[] = [
 	{
 		icon: 'Mail',
 		label: 'Email',
-		value: 'dev.humam@gmail.com', // This will be replaced by contactInfo.email
-		href: 'mailto:dev.humam@gmail.com', // This will be replaced by contactInfo.email
+		value: 'dev.humam@gmail.com',
+		href: 'mailto:dev.humam@gmail.com',
 		primary: true,
 	},
 	{
 		icon: 'Phone',
 		label: 'Phone',
-		value: '+212 639 01 31 51', // This will be replaced by contactInfo.phone
-		href: 'tel:+212 639 01 31 51', // This will be replaced by contactInfo.phone
+		value: '+212 639 01 31 51',
+		href: 'tel:+212 639 01 31 51',
 		primary: true,
 	},
 	{
-		icon: 'MapPin',
+		icon: 'House',
 		label: 'Based in',
-		value: 'Morocco', // This will be replaced by contactInfo.location
+		value: 'Morocco',
 		href: null,
 		primary: false,
 	},

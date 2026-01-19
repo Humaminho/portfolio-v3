@@ -52,7 +52,7 @@ export const experiences: Experience[] = [
 		location: 'Morocco',
 		current: false,
 		description:
-			'Built Blanaty.ma, a booking platform for beauty and wellness services with comprehensive features and real-time capabilities.',
+			'Built Blanaty.ma, a booking platform for beauty and wellness services with advanced features and real-time capabilities.',
 		responsibilities: [
 			'Built Blanaty.ma, a booking platform for beauty and wellness services',
 			'Designed relational schemas with Prisma ORM and PostgreSQL',

@@ -16,12 +16,12 @@ export const projects: Project[] = [
 		src: '/img/projects/blanaty.png',
 		title: 'Blanaty',
 		description:
-			"Morocco's premier beauty and wellness booking platform, architected as a complex, enterprise-grade application connecting clients with local salons and professionals. Built a comprehensive system with intricate database relationships, multiple user dashboards, and scalable infrastructure designed to serve Morocco's growing beauty industry.",
+			"Morocco's premier beauty and wellness booking platform, architected as a complex, enterprise-grade application connecting clients with local salons and professionals. Built a solid system with intricate database relationships, multiple user dashboards, and scalable infrastructure designed to serve Morocco's growing beauty industry.",
 		features: [
 			'Complex multi-entity architecture managing salons, professionals, clients, and bookings',
 			'Advanced role-based dashboards for admins and premium users',
 			'Integrated Mapbox geolocation for location-based service discovery',
-			'Secure Stripe payment processing with comprehensive transaction logging',
+			'Secure Stripe payment processing with solid transaction logging',
 		],
 		github: 'N/A',
 		live: 'https://www.blanaty.ma',
@@ -43,7 +43,7 @@ export const projects: Project[] = [
 		src: '/img/projects/shopco.png',
 		title: 'Shop Co',
 		description:
-			'A showcase e-commerce platform demonstrating advanced frontend development skills and modern web technologies. Crafted as a personal project to exhibit expertise in building scalable, performant, and user-centric digital shopping experiences from concept to deployment.',
+			'A showcase e-commerce platform demonstrating advanced frontend development skills and modern web technologies. Crafted as a personal project to exhibit mastery in building scalable, performant, and user-centric digital shopping experiences from concept to deployment.',
 		features: [
 			'Component-driven architecture with reusable, type-safe React components',
 			'Performance-optimized with code splitting, lazy loading, and asset optimization',
@@ -60,7 +60,7 @@ export const projects: Project[] = [
 		src: '/img/projects/credilik.png',
 		title: 'Credilik',
 		description:
-			"A multilingual financial technology platform serving Morocco's credit market, featuring intelligent automation and seamless user experience. Developed a comprehensive credit application system with integrated Google Workspace automation for streamlined financial workflows and client management.",
+			"A multilingual financial technology platform serving Morocco's credit market, featuring intelligent automation and seamless user experience. Developed a credit application system with integrated Google Workspace automation for streamlined financial workflows and client management.",
 		features: [
 			'Dynamic credit simulator with real-time interest rate calculations',
 			'Advanced analytics dashboard for lead tracking and conversion metrics',

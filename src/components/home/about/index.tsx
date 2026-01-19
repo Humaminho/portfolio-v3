@@ -5,6 +5,7 @@ import { ArrowUpRight, Award, Code, Sparkles } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import CountUp from '@/components/common/animations/count-up';
 import { aboutContent, spacing } from '@/constants';
 
 export function AboutMiniSection() {
@@ -26,10 +27,10 @@ export function AboutMiniSection() {
 									stat.icon === 'Award'
 										? Award
 										: stat.icon === 'Sparkles'
-										? Sparkles
-										: stat.icon === 'Code'
-										? Code
-										: Award;
+											? Sparkles
+											: stat.icon === 'Code'
+												? Code
+												: Award;
 								return (
 									<div
 										key={index}
@@ -37,7 +38,11 @@ export function AboutMiniSection() {
 									>
 										<IconComponent className="h-6 w-6 text-primary mx-auto mb-2" />
 										<p className="text-xl font-bold">
-											{stat.value}
+											<CountUp
+												to={parseInt(stat.value)}
+												duration={2}
+											/>
+											{stat.value.replace(/[0-9]/g, '')}
 										</p>
 										<p className="text-xs text-muted-foreground">
 											{stat.label}
@@ -50,7 +55,7 @@ export function AboutMiniSection() {
 						<Button asChild className="rounded-xs px-6 py-2 group">
 							<Link href="/about">
 								{aboutContent.cta.text}
-								<ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+								<ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
 							</Link>
 						</Button>
 					</div>
@@ -76,8 +81,8 @@ export function AboutMiniSection() {
 								{aboutContent.currentRole.description[0]}
 							</p>
 							<div className="flex flex-wrap gap-2">
-								{aboutContent.currentRole.technologies
-									.map((tech) => (
+								{aboutContent.currentRole.technologies.map(
+									(tech) => (
 										<Badge
 											key={tech}
 											variant="secondary"
@@ -85,7 +90,8 @@ export function AboutMiniSection() {
 										>
 											{tech}
 										</Badge>
-									))}
+									),
+								)}
 							</div>
 						</div>
 					</div>

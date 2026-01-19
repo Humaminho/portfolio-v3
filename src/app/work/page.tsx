@@ -41,7 +41,7 @@ export default function WorkPage() {
 					<p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
 						Showcasing a diverse range of projects, from e-commerce
 						platforms to booking systems and FinTech solutions,
-						demonstrating expertise in various domains and
+						demonstrating mastery in various domains and
 						technologies.
 					</p>
 				</div>
@@ -61,13 +61,13 @@ export default function WorkPage() {
 							>
 								<Card className="overflow-hidden rounded-sm relative group p-0">
 									{/* Scrollable */}
-									<div className="relative h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-primary/30 scrollbar-track-transparent hover:scrollbar-thumb-primary/50 transition-all duration-300">
+									<div className="relative h-150 overflow-y-auto scrollbar-thin scrollbar-thumb-primary/30 scrollbar-track-transparent hover:scrollbar-thumb-primary/50 transition-all duration-300">
 										<Image
 											src={`/img/projects/${project.title
 												.toLowerCase()
 												.replace(
 													' ',
-													''
+													'',
 												)}_fullscreen.png`}
 											alt={`${project.title} fullscreen screenshot`}
 											width={800}
@@ -80,7 +80,7 @@ export default function WorkPage() {
 
 									{/* Scroll */}
 									<div className="absolute inset-0 pointer-events-none">
-										<div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
+										<div className="absolute bottom-0 left-0 right-0 h-20 bg-linear-to-t from-black/40 via-black/20 to-transparent" />
 										<div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/90">
 											<span className="text-xs mb-2 font-medium bg-black/20 px-3 py-1 rounded-full backdrop-blur-sm">
 												Scroll to explore
@@ -90,7 +90,7 @@ export default function WorkPage() {
 									</div>
 
 									{/* Hover */}
-									<div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+									<div className="absolute inset-0 bg-linear-to-t from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 								</Card>
 							</div>
 
@@ -122,12 +122,12 @@ export default function WorkPage() {
 														key={featureIndex}
 														className="flex items-start"
 													>
-														<div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+														<div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 shrink-0" />
 														<span className="text-muted-foreground">
 															{feature}
 														</span>
 													</li>
-												)
+												),
 											)}
 										</ul>
 									</div>
@@ -146,7 +146,7 @@ export default function WorkPage() {
 													>
 														{tech}
 													</Badge>
-												)
+												),
 											)}
 										</div>
 									</div>

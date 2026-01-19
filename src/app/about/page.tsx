@@ -7,7 +7,7 @@ import { TechSection } from '@/components/about/tech';
 export const metadata: Metadata = {
 	title: 'About - Humam',
 	description:
-		'Learn more about Humam, a passionate Full Stack Developer from Morocco. Discover my journey, experience, and technical expertise.',
+		'Learn more about Humam, a Full Stack Developer from Morocco. Discover my journey, experience, and technical mastery.',
 	keywords: [
 		'About',
 		'Full Stack Developer',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: 'About - Humam',
 		description:
-			'Learn more about Humam, a passionate Full Stack Developer from Morocco.',
+			'Learn more about Humam, a Full Stack Developer from Morocco.',
 		type: 'website',
 	},
 };

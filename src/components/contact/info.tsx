@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, House, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { contactInfo } from '@/constants';
 
@@ -9,7 +9,7 @@ export function ContactInfo() {
 			<CardHeader>
 				<CardTitle>Contact Information</CardTitle>
 			</CardHeader>
-			<CardContent className="space-y-6">
+			<CardContent className="space-y-6 text-sm">
 				<div className="flex items-start gap-4">
 					<Mail className="h-5 w-5 text-primary mt-1" />
 					<div>
@@ -35,7 +35,7 @@ export function ContactInfo() {
 					</div>
 				</div>
 				<div className="flex items-start gap-4">
-					<MapPin className="h-5 w-5 text-primary mt-1" />
+					<House className="h-5 w-5 text-primary mt-1" />
 					<div>
 						<p className="font-medium">Location</p>
 						<p className="text-muted-foreground">

@@ -75,9 +75,8 @@ export function TechSection() {
 				<div className="text-center mb-16">
 					<h2 className={spacing.heading}>Technologies & Tools</h2>
 					<p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-						A comprehensive overview of the technologies,
-						frameworks, and tools I work with to build modern,
-						scalable applications.
+						An overview of the technologies, frameworks, and tools I
+						work with to build modern, scalable applications.
 					</p>
 				</div>
 

@@ -48,12 +48,6 @@ export const techStack: TechItem[] = [
 		category: 'backend',
 		proficiency: 'advanced',
 	},
-	// {
-	// 	name: 'Python',
-	// 	icon: '🐍',
-	// 	category: 'backend',
-	// 	proficiency: 'intermediate',
-	// },
 
 	{
 		name: 'PostgreSQL',

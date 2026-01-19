@@ -3,8 +3,7 @@ export const heroContent = {
 	name: 'Humam',
 	title: 'Full Stack Developer',
 	location: 'Morocco',
-	description:
-		`Full Stack Developer focused on scalable, user-centric web apps—combining modern tech with creative problem-solving.`,
+	description: `Full Stack Developer focused on reliable, scalable, and user-centric web apps, combining cutting-edge tech with problem-solving.`,
 	cta: {
 		primary: {
 			text: 'Get in touch',
@@ -19,7 +18,7 @@ export const heroContent = {
 
 export const aboutContent = {
 	title: 'About Me',
-	description: `I'm Humam Kharbouch, a passionate Full Stack Developer from Morocco. As a freelancer, I work on a variety of projects, always focused on bringing value through technology. I'm constantly learning and improving, with 3+ years of experience building scalable, secure, and user-centric web applications using modern technologies.`,
+	description: `I'm Humam Kharbouch, a Full Stack Developer from Morocco. As a freelancer, I work on a variety of projects, always focused on bringing value through technology. I'm constantly learning and improving, with 3+ years of experience building reliable, scalable, secure, and user-centric web applications using modern technologies.`,
 	stats: [
 		{ icon: 'Award', value: '3+', label: 'Years Experience' },
 		{ icon: 'Sparkles', value: '15+', label: 'Technologies' },
@@ -70,7 +69,7 @@ export const projectsContent = {
 	summary: {
 		title: 'Project Achievements',
 		description:
-			'Showcasing a diverse range of projects, from e-commerce platforms to booking systems and FinTech solutions, demonstrating expertise in various domains and technologies.',
+			'Showcasing a diverse range of projects, from e-commerce platforms to booking systems and FinTech solutions, demonstrating mastery in various domains and technologies.',
 		stats: [
 			{ value: '3', label: 'Major Projects' },
 			{ value: '5+', label: 'Client Engagements' },
@@ -94,12 +93,12 @@ export const contactContent = {
 			href: '/contact',
 		},
 		secondary: {
-			text: "Let's Build Something Cool Together!",
+			text: "Let's Collaborate!",
 			description:
 				"Whether you have a project in mind, a question, or just want to say hi, I'd love to hear from you.",
 		},
 	},
-	responseTime: 'Typically responds within 24 hours',
+	responseTime: 'I typically respond within 24 hours',
 };
 
 export const spacing = {

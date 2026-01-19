@@ -4,7 +4,7 @@ import Link from 'next/link';
 import {
 	Mail,
 	Phone,
-	MapPin,
+	House,
 	Github,
 	Linkedin,
 	Code2,
@@ -27,7 +27,7 @@ function getContactIcon(iconName: string) {
 	} = {
 		Mail: Mail,
 		Phone: Phone,
-		MapPin: MapPin,
+		House: House,
 	};
 	return iconMap[iconName] || Mail;
 }
@@ -48,7 +48,7 @@ export function ContactSection() {
 		<section id="contact" className={spacing.section}>
 			<div className={spacing.container}>
 				<h2 className={spacing.heading}>{contactContent.title}</h2>
-				<p className="text-xl text-muted-foreground mb-16 max-w-3xl mx-auto animate-in fade-in-0 zoom-in-95 duration-700 ease-out delay-100">
+				<p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto animate-in fade-in-0 zoom-in-95 duration-700 ease-out delay-100">
 					{contactContent.description}
 				</p>
 
@@ -63,20 +63,20 @@ export function ContactSection() {
 							<div className="space-y-4">
 								{contactMethods.map((method) => {
 									const IconComponent = getContactIcon(
-										method.icon
+										method.icon,
 									);
 									const actualValue =
 										method.label === 'Email'
 											? contactInfo.email
 											: method.label === 'Phone'
-											? contactInfo.phone
-											: contactInfo.location;
+												? contactInfo.phone
+												: contactInfo.location;
 									const actualHref =
 										method.label === 'Email'
 											? `mailto:${contactInfo.email}`
 											: method.label === 'Phone'
-											? `tel:${contactInfo.phone}`
-											: null;
+												? `tel:${contactInfo.phone}`
+												: null;
 									return (
 										<div
 											key={method.label}
@@ -126,7 +126,7 @@ export function ContactSection() {
 							<div className="grid gap-4">
 								{socialPlatforms.map((platform) => {
 									const IconComponent = getSocialIcon(
-										platform.icon
+										platform.icon,
 									);
 									return (
 										<a
@@ -167,7 +167,7 @@ export function ContactSection() {
 							<Button asChild className="rounded-xs w-full group">
 								<Link href={contactContent.cta.primary.href}>
 									{contactContent.cta.primary.text}
-									<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+									<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
 								</Link>
 							</Button>
 

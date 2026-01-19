@@ -6,6 +6,7 @@ import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import CountUp from '@/components/common/animations/count-up';
 import { projects, projectsContent, spacing } from '@/constants';
 
 interface ProjectCardProps {
@@ -61,7 +62,7 @@ function ProjectCard({ project }: ProjectCardProps) {
 					</p>
 				</div>
 
-				{/* Key Features - Improved spacing and typography */}
+				{/* Key Features */}
 				<div className="mb-5 flex-1">
 					<h4 className="font-medium text-sm mb-3 text-foreground/80">
 						Key Features
@@ -88,7 +89,7 @@ function ProjectCard({ project }: ProjectCardProps) {
 							<Badge
 								key={tech}
 								variant="outline"
-								className="text-xs rounded-xs px-2.5 py-1 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors duration-200"
+								className="text-xs rounded-xs px-2.5 py-1"
 							>
 								{tech}
 							</Badge>
@@ -159,7 +160,7 @@ export function ProjectsSection() {
 					<Button asChild className="rounded-xs px-8 py-3 group">
 						<Link href={projectsContent.cta.href}>
 							{projectsContent.cta.text}
-							<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+							<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
 						</Link>
 					</Button>
 				</div>
@@ -179,7 +180,11 @@ export function ProjectsSection() {
 								className="flex flex-col items-center"
 							>
 								<span className="text-primary text-4xl font-bold">
-									{stat.value}
+									<CountUp
+										to={parseInt(stat.value)}
+										duration={2}
+									/>
+									{stat.value.replace(/[0-9]/g, '')}
 								</span>
 								<p className="text-sm text-muted-foreground">
 									{stat.label}

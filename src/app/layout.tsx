@@ -5,6 +5,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { Toaster } from '@/components/ui/sonner';
 
 const montserrat = Montserrat({
 	variable: '--font-montserrat',
@@ -19,7 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
 	title: 'Humam - Full Stack Developer',
 	description:
-		'Portfolio of Humam, a passionate Full Stack Developer from Morocco specializing in modern web technologies, AI, and UI/UX design.',
+		'Portfolio of Humam, a Full Stack Developer from Morocco specializing in modern web technologies, AI, and UI/UX design.',
 	keywords: [
 		'Full Stack Developer',
 		'React',
@@ -33,8 +34,8 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: 'Humam - Full Stack Developer',
 		description:
-			'Portfolio of Humam, a passionate Full Stack Developer from Morocco',
-		url: 'https://humam.pro',
+			'Portfolio of Humam, a Full Stack Developer from Morocco',
+		url: 'https://humam.tech',
 		siteName: 'Humam Portfolio',
 		locale: 'en_US',
 		type: 'website',
@@ -60,6 +61,7 @@ export default function RootLayout({
 					<Header />
 					<main>{children}</main>
 					<Footer />
+					<Toaster position="top-center" />
 				</ThemeProvider>
 			</body>
 		</html>

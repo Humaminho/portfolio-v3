@@ -3,7 +3,15 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-import { Moon, Sun, Menu, X, Github, Linkedin, Code2 } from 'lucide-react';
+import {
+	LightbulbOff,
+	Lightbulb,
+	Menu,
+	X,
+	Github,
+	Linkedin,
+	Code2,
+} from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/ui/logo';
@@ -72,7 +80,7 @@ export function Header() {
 							<Menu
 								className={cn(
 									'h-5 w-5 transition-all',
-									isMobileMenuOpen && 'rotate-90 scale-0'
+									isMobileMenuOpen && 'rotate-90 scale-0',
 								)}
 							/>
 							<X
@@ -80,7 +88,7 @@ export function Header() {
 									'absolute h-5 w-5 transition-all',
 									isMobileMenuOpen
 										? 'rotate-0 scale-100'
-										: '-rotate-90 scale-0'
+										: '-rotate-90 scale-0',
 								)}
 							/>
 						</Button>
@@ -107,8 +115,8 @@ export function Header() {
 							className="hidden md:flex h-10 w-10"
 							aria-label="Toggle theme"
 						>
-							<Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-							<Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+							<Lightbulb className="h-4 w-4 rotate-180 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+							<LightbulbOff className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-180 dark:scale-100" />
 						</Button>
 
 						{/* Reach Out Button */}
@@ -125,7 +133,7 @@ export function Header() {
 					'fixed inset-0 bg-background/80 backdrop-blur-md z-40 md:hidden transition-all duration-300',
 					isMobileMenuOpen
 						? 'opacity-100 visible'
-						: 'opacity-0 invisible'
+						: 'opacity-0 invisible',
 				)}
 				onClick={closeMobileMenu}
 			>
@@ -134,7 +142,7 @@ export function Header() {
 						'fixed top-14 left-0 right-0 bg-background border-b border-border transition-all duration-300 transform',
 						isMobileMenuOpen
 							? 'translate-y-0 opacity-100'
-							: '-translate-y-full opacity-0'
+							: '-translate-y-full opacity-0',
 					)}
 					onClick={(e) => e.stopPropagation()}
 				>
@@ -164,7 +172,7 @@ export function Header() {
 							<div className="flex gap-3">
 								{socialPlatforms.map((social) => {
 									const IconComponent = getSocialIcon(
-										social.icon
+										social.icon,
 									);
 									return (
 										<Button
@@ -201,8 +209,8 @@ export function Header() {
 								}}
 								className="rounded-xs w-full justify-start"
 							>
-								<Sun className="h-4 w-4 mr-2 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-								<Moon className="absolute h-4 w-4 ml-2 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+								<Lightbulb className="h-4 w-4 mr-2 rotate-180 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+								<LightbulbOff className="absolute h-4 w-4 ml-2 rotate-90 scale-0 transition-all dark:rotate-180 dark:scale-100" />
 								<span className="ml-6">
 									{mounted
 										? theme === 'dark'

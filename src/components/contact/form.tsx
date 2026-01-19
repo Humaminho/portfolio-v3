@@ -1,15 +1,28 @@
 import React from 'react';
-import { Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import {
+	Send,
+	Loader2,
+	CheckCircle,
+	AlertCircle,
+	Asterisk,
+	Command,
+	CornerDownLeft,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useContactForm } from '@/hooks/use-contact-form';
+import { toast } from 'sonner';
 
 interface ContactFormProps {
 	onSuccess?: () => void;
 	onError?: (error: string) => void;
+}
+
+function RequiredIndicator() {
+	return <Asterisk className="h-3 w-3 text-red-500 inline-block ml-1" />;
 }
 
 export function ContactForm({ onSuccess, onError }: ContactFormProps) {
@@ -23,13 +36,36 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
 		handleSubmit,
 	} = useContactForm();
 
-	// Handle success and error callbacks
 	React.useEffect(() => {
-		if (isSuccess && onSuccess) {
-			onSuccess();
+		const handleKeyDown = (e: KeyboardEvent) => {
+			if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+				if (!isLoading && !isSuccess) {
+					const submitButton = document.querySelector(
+						'button[type="submit"]',
+					) as HTMLButtonElement;
+					if (submitButton) {
+						submitButton.click();
+					}
+				}
+			}
+		};
+
+		window.addEventListener('keydown', handleKeyDown);
+		return () => window.removeEventListener('keydown', handleKeyDown);
+	}, [isLoading, isSuccess]);
+
+	React.useEffect(() => {
+		if (isSuccess) {
+			toast.success('Message sent successfully!');
+			if (onSuccess) {
+				onSuccess();
+			}
 		}
-		if (error && onError) {
-			onError(error);
+		if (error) {
+			toast.error(error);
+			if (onError) {
+				onError(error);
+			}
 		}
 	}, [isSuccess, error, onSuccess, onError]);
 
@@ -45,14 +81,17 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
 				<form onSubmit={handleSubmit} className="space-y-6">
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 						<div className="space-y-2">
-							<Label htmlFor="firstName">First Name</Label>
+							<Label htmlFor="firstName">
+								First Name
+								<RequiredIndicator />
+							</Label>
 							<Input
 								id="firstName"
 								value={formData.firstName}
 								onChange={(e) =>
 									handleInputChange(
 										'firstName',
-										e.target.value
+										e.target.value,
 									)
 								}
 								placeholder="John"
@@ -71,14 +110,17 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
 							)}
 						</div>
 						<div className="space-y-2">
-							<Label htmlFor="lastName">Last Name</Label>
+							<Label htmlFor="lastName">
+								Last Name
+								<RequiredIndicator />
+							</Label>
 							<Input
 								id="lastName"
 								value={formData.lastName}
 								onChange={(e) =>
 									handleInputChange(
 										'lastName',
-										e.target.value
+										e.target.value,
 									)
 								}
 								placeholder="Doe"
@@ -97,32 +139,58 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
 							)}
 						</div>
 					</div>
-					<div className="space-y-2">
-						<Label htmlFor="email">Email</Label>
-						<Input
-							id="email"
-							type="email"
-							value={formData.email}
-							onChange={(e) =>
-								handleInputChange('email', e.target.value)
-							}
-							placeholder="john@example.com"
-							className={`rounded-sm ${
-								errors.email
-									? 'border-red-500 focus:border-red-500'
-									: ''
-							}`}
-							disabled={isLoading}
-						/>
-						{errors.email && (
-							<p className="text-sm text-red-500 flex items-center gap-1">
-								<AlertCircle className="h-4 w-4" />
-								{errors.email}
-							</p>
-						)}
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+						<div className="space-y-2">
+							<Label htmlFor="email">
+								Email
+								<RequiredIndicator />
+							</Label>
+							<Input
+								id="email"
+								type="email"
+								value={formData.email}
+								onChange={(e) =>
+									handleInputChange('email', e.target.value)
+								}
+								placeholder="john@example.com"
+								className={`rounded-sm ${
+									errors.email
+										? 'border-red-500 focus:border-red-500'
+										: ''
+								}`}
+								disabled={isLoading}
+							/>
+							{errors.email && (
+								<p className="text-sm text-red-500 flex items-center gap-1">
+									<AlertCircle className="h-4 w-4" />
+									{errors.email}
+								</p>
+							)}
+						</div>
+						<div className="space-y-2">
+							<Label htmlFor="company">
+								Company
+								<span className="text-muted-foreground text-xs ml-1">
+									(optional)
+								</span>
+							</Label>
+							<Input
+								id="company"
+								value={formData.company}
+								onChange={(e) =>
+									handleInputChange('company', e.target.value)
+								}
+								placeholder="Acme Inc."
+								className="rounded-sm"
+								disabled={isLoading}
+							/>
+						</div>
 					</div>
 					<div className="space-y-2">
-						<Label htmlFor="subject">Subject</Label>
+						<Label htmlFor="subject">
+							Subject
+							<RequiredIndicator />
+						</Label>
 						<Input
 							id="subject"
 							value={formData.subject}
@@ -145,7 +213,10 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
 						)}
 					</div>
 					<div className="space-y-2">
-						<Label htmlFor="message">Message</Label>
+						<Label htmlFor="message">
+							Message
+							<RequiredIndicator />
+						</Label>
 						<Textarea
 							id="message"
 							value={formData.message}
@@ -153,7 +224,7 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
 								handleInputChange('message', e.target.value)
 							}
 							placeholder="Tell me about your project or how I can help..."
-							className={`rounded-sm min-h-[120px] ${
+							className={`rounded-sm min-h-30 ${
 								errors.message
 									? 'border-red-500 focus:border-red-500'
 									: ''
@@ -183,10 +254,15 @@ export function ContactForm({ onSuccess, onError }: ContactFormProps) {
 								Message Sent!
 							</>
 						) : (
-							<>
-								<Send className="h-4 w-4 mr-2" />
+							<div className="flex items-center w-full justify-center">
+								<Send className="h-4 w-4 mr-4" />
 								Send Message
-							</>
+								<div className="ml-4 flex items-center text-xs opacity-70 bg-primary-foreground/10 px-2 py-1 rounded">
+									<Command className="h-3 w-3 mr-1" />
+									<span className="mr-1">+</span>
+									<CornerDownLeft className="h-3 w-3" />
+								</div>
+							</div>
 						)}
 					</Button>
 				</form>

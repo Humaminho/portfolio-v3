@@ -3,7 +3,7 @@
 import React from 'react';
 import {
 	Calendar,
-	MapPin,
+	House,
 	Building2,
 	Users,
 	Code2,
@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
+import CountUp from '@/components/common/animations/count-up';
 import { experienceContent, experiences, spacing } from '@/constants';
 
 function getExperienceIcon(iconName: string) {
@@ -57,7 +58,7 @@ export function ExperienceSection() {
 									>
 										{React.createElement(
 											getExperienceIcon(exp.icon),
-											{ className: 'h-5 w-5' }
+											{ className: 'h-5 w-5' },
 										)}
 									</div>
 								</div>
@@ -67,7 +68,7 @@ export function ExperienceSection() {
 									className={`ml-12 md:ml-0 ${
 										index % 2 === 0
 											? 'md:mr-8 '
-											: 'md:ml-8 relative right-[1px]'
+											: 'md:ml-8 relative right-px'
 									} md:w-1/2`}
 								>
 									<div className="bg-card border border-border rounded-sm p-6 shadow-sm">
@@ -98,7 +99,7 @@ export function ExperienceSection() {
 													{exp.period}
 												</div>
 												<div className="flex items-center gap-1">
-													<MapPin className="h-4 w-4" />
+													<House className="h-4 w-4" />
 													{exp.location}
 												</div>
 												<Badge
@@ -141,7 +142,7 @@ export function ExperienceSection() {
 														>
 															{tech}
 														</Badge>
-													)
+													),
 												)}
 											</div>
 										</div>
@@ -166,10 +167,10 @@ export function ExperienceSection() {
 								stat.icon === 'Award'
 									? Award
 									: stat.icon === 'Hourglass'
-									? Hourglass
-									: stat.icon === 'Code'
-									? Code2
-									: CheckCircle;
+										? Hourglass
+										: stat.icon === 'Code'
+											? Code2
+											: CheckCircle;
 							return (
 								<div
 									key={index}
@@ -177,7 +178,11 @@ export function ExperienceSection() {
 								>
 									<IconComponent className="h-8 w-8 text-primary mb-2" />
 									<p className="text-2xl font-bold">
-										{stat.value}
+										<CountUp
+											to={parseInt(stat.value)}
+											duration={2}
+										/>
+										{stat.value.replace(/[0-9]/g, '')}
 									</p>
 									<p className="text-sm text-muted-foreground">
 										{stat.label}

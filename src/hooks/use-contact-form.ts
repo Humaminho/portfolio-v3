@@ -4,6 +4,7 @@ interface ContactFormData {
 	firstName: string;
 	lastName: string;
 	email: string;
+	company: string;
 	subject: string;
 	message: string;
 }
@@ -12,6 +13,7 @@ interface FormErrors {
 	firstName?: string;
 	lastName?: string;
 	email?: string;
+	company?: string;
 	subject?: string;
 	message?: string;
 }
@@ -31,6 +33,7 @@ const initialFormData: ContactFormData = {
 	firstName: '',
 	lastName: '',
 	email: '',
+	company: '',
 	subject: '',
 	message: '',
 };
@@ -56,7 +59,6 @@ export function useContactForm(): UseContactFormReturn {
 		if (!formData.email.trim()) {
 			newErrors.email = 'Email is required';
 		} else {
-			// Email format validation
 			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 			if (!emailRegex.test(formData.email)) {
 				newErrors.email = 'Please enter a valid email address';
@@ -127,7 +129,7 @@ export function useContactForm(): UseContactFormReturn {
 			setError(
 				err instanceof Error
 					? err.message
-					: 'An unexpected error occurred'
+					: 'An unexpected error occurred',
 			);
 		} finally {
 			setIsLoading(false);

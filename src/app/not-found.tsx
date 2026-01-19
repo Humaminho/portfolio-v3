@@ -9,7 +9,7 @@ export default function NotFound() {
 			<div className="max-w-md mx-auto text-center space-y-8">
 				{/* Content */}
 				<div className="space-y-4 animate-in fade-in-0 slide-in-from-bottom-2 duration-700 ease-out delay-200">
-					<h1 className="text-6xl md:text-8xl font-bold text-blue-500">
+					<h1 className="text-6xl md:text-9xl font-bold">
 						404
 					</h1>
 					<h2 className="text-2xl md:text-3xl font-semibold">
