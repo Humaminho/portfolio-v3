@@ -19,8 +19,8 @@ export function CvDownload({
 }: CvDownloadProps) {
 	const handleDownload = () => {
 		const link = document.createElement('a');
-		link.href = '/docs/humam_kharbouch_resume.pdf';
-		link.download = 'Humam_Kharbouch_Resume.pdf';
+		link.href = '/docs/Houmame_Kharbouch_Resume.pdf';
+		link.download = 'Houmame_Kharbouch_Resume.pdf';
 		document.body.appendChild(link);
 		link.click();
 		document.body.removeChild(link);
@@ -34,7 +34,7 @@ export function CvDownload({
 				onClick={handleDownload}
 				className={cn(
 					'rounded-xs hover:bg-primary hover:text-primary-foreground transition-colors',
-					className
+					className,
 				)}
 				title="Download CV"
 			>
